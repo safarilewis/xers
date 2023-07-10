@@ -1,0 +1,17 @@
+{
+  "name": "xers",
+  "version": "1.0.0",
+  "description": "Xers server",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Lewis Safari",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
