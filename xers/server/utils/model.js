@@ -2,16 +2,36 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    firstName: String,
-    lastName: String,
-    location: String,
-    title: String,
-    techStacks: Array,
+    firstName: {
+        type: String,
+
+    },
+    lastName: {
+        type: String,
+ 
+    },
+    location: {
+        type: String,
+    },
+    title: {
+        type: String,
+        
+    },
+    techStacks: {
+        type: Array,
+        
+    },
     isMentor: Boolean,
     image: {
         data: Buffer,
-        type: String
+        type: String,
+        sparse: true
     },
+    projects: [{
+        type: String,
+        ref: "projects",
+        sparse: true
+    }]
 })
 
 //Model
@@ -19,4 +39,6 @@ const Model = mongoose.model
 const user = Model('users', userSchema)
 
 
-module.exports = user
+
+
+module.exports = user; 

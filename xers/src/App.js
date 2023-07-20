@@ -1,7 +1,5 @@
-
-import './App.css';
 import React, { useState } from 'react';
-import logo from './assets/xers-logo.png'
+//import logo from './assets/xers-logo.png'
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +8,8 @@ function App() {
     <header className="bg-cyan-400">
       <nav className="flex items-center justify-between flex-wrap p-6 bg-gradient-to-r from-indigo-500">
         <div className="flex items-center flex-shrink-0 text-white mr-6 lg:mr-72 flex-row">
-          <img src={logo} className="w-20 h-20 mr-2" alt="Logo" />
-          <div className='text-black font-bold font-sans'>Xers</div>
+          {/* <img src={logo} className="w-20 h-20 mr-2" alt="Logo" /> */}
+          <div className='text-white font-bold font-sans text-3xl font-serif italic'>Xers</div>
         </div>
         <div className="block lg:hidden">
           <button

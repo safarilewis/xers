@@ -6,18 +6,23 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/Home';
 import Mentors from './components/Mentors'
-import App from './App';
+import HallOfFame from './components/HallOfFame';
+//import Splash from './components/Splash';
 
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Home />,
   },
   {
     path: '/home',
     element: <Home />,
+  },
+  {
+    path: '/hof',
+    element: <HallOfFame/>,
   },
   {
     path: '/mentors',
