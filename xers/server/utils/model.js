@@ -8,20 +8,20 @@ const userSchema = new Schema({
     },
     lastName: {
         type: String,
- 
+
     },
     location: {
         type: String,
     },
     title: {
         type: String,
-        
+
     },
     techStacks: {
         type: Array,
-        
+
     },
-    isMentor: Boolean,
+    isMentor: { type: Boolean, default: false },
     image: {
         data: Buffer,
         type: String,

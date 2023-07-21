@@ -4,17 +4,30 @@ const projectModel = require('../utils/projectModel')
 const app = express();
 const router = express.Router()
 const { register } = require('../controllers/user-controller')
+const cors = require('cors')
+const multer = require('multer')
+const upload = multer({ storage: multer.memoryStorage() });
 
 //TODO: Move functions to controllers
 app.use(express.json())
+app.use(cors())
 router.route("/register").post(register);
 
-app.use("/users", router)
+app.use("/users", upload.single('image'), router)
 
 app.get("/users", async (request, response) => {
   const users = await userModel.find({});
   try {
-    response.send(users);
+    const formattedUsers = users.map(user => ({
+      id: user._id, 
+      name: user.firstName + ' ' + user.lastName,
+      location: user.location,
+      techStacks: user.techStacks,
+      image: user.image,
+      title: user.title,
+
+    }));
+    response.send(formattedUsers);
   } catch (error) {
     response.status(500).send(error);
   }
