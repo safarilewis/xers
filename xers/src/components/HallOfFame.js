@@ -3,7 +3,6 @@ import NavBar from './Navigator';
 import HOF from '../assets/hof-back.jpg'
 import axios from 'axios';
 import TeamCard from './feature-card';
-import { Card, CardBody, Typography } from '@material-tailwind/react';
 
 //const url = "http://localhost:3000/users"
 
@@ -14,7 +13,7 @@ import { Card, CardBody, Typography } from '@material-tailwind/react';
 export default function HallOfFame() {
   const [user, setUser] = useState([]);
   useEffect(() => {
-    
+
     console.log('I have started');
     let config = {
       method: 'get',
@@ -37,7 +36,7 @@ export default function HallOfFame() {
           <div className="absolute top-0 h-0 w-full bg-black/75 bg-cover bg-center">  
               <NavBar />
           </div>
-          <div className="flex h-full w-full items-center justify-center">
+          <div className="flex h-full w-full items-center justify-center bg-black/50">
             <div className="items-center content-center">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
               {user.map((user) => {
@@ -49,6 +48,7 @@ export default function HallOfFame() {
             </div>
             </div>
           </div>
+          
         </div>
       </div>
     </>

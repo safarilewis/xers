@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/Home';
 import Mentors from './components/Mentors'
 import HallOfFame from './components/HallOfFame';
+import Add from './components/Add';
 //import Splash from './components/Splash';
 
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: '/mentors',
     element: <Mentors/>,
+  },
+  {
+    path: '/add',
+    element: <Add/>,
   }
 ])
 

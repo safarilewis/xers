@@ -11,6 +11,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 //TODO: Move functions to controllers
 app.use(express.json())
 app.use(cors())
+
 router.route("/register").post(register);
 
 app.use("/users", upload.single('image'), router)
