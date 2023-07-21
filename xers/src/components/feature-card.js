@@ -1,40 +1,28 @@
-import PropTypes from "prop-types";
-import { Card, Avatar, Typography } from "@material-tailwind/react";
+//import PropTypes from "prop-types";
+import { Avatar, Card, CardBody, Typography } from "@material-tailwind/react";
+import '../App.css'
 
-export function TeamCard({ img, name, position, socials }) {
+
+export function TeamCard({ image, name, title, location, techStacks }) {
+
   return (
-    <Card color="transparent" shadow={false} className="text-center">
-      <Avatar
-        src={img}
-        alt={name}
-        size="xxl"
-        className="h-full w-full shadow-lg shadow-gray-500/25"
-      />
-      <Typography variant="h5" color="blue-gray" className="mt-6 mb-1">
-        {name}
-      </Typography>
-      {position && (
-        <Typography className="font-normal text-blue-gray-500">
-          {position}
-        </Typography>
-      )}
-      {socials && <div className="mx-auto mt-5">{socials}</div>}
-    </Card>
+        <Card color="white" shadow={false} className="group text-center md:bg-opacity-40 inset-0">
+          <CardBody className="px-8 text-center">
+              <Avatar
+                src={image}
+                alt={name}
+                size="xxl"
+                className="h-24 w-24 shadow-lg shadow-gray-500/25 object-cover"
+              />
+              <Typography className="text-white font-bold">
+                {name}
+              </Typography>
+              <Typography className="text-white font-bold">
+                {title + ',' + location}
+              </Typography>
+          </CardBody>
+        </Card>
   );
 }
-
-TeamCard.defaultProps = {
-  position: "",
-  socials: null,
-};
-
-TeamCard.propTypes = {
-  img: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  position: PropTypes.string,
-  socials: PropTypes.node,
-};
-
-//TeamCard.displayName = "/src/widgets/layout/team-card.jsx";
 
 export default TeamCard;
