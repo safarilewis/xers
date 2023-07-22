@@ -7,12 +7,19 @@ const { register } = require('../controllers/user-controller')
 const cors = require('cors')
 const multer = require('multer')
 const upload = multer({ storage: multer.memoryStorage() });
+const { registerMentor, login } = require('../auth/Auth')
 
 //TODO: Move functions to controllers
 app.use(express.json())
 app.use(cors())
 
-router.route("/register").post(register);
+
+router.route("/register").post(registerMentor);
+router.route("/login").post(login)
+app.use("/mentors/auth", router)
+
+
+router.route("/hof").post(register);
 
 app.use("/users", upload.single('image'), router)
 
@@ -20,7 +27,7 @@ app.get("/users", async (request, response) => {
   const users = await userModel.find({});
   try {
     const formattedUsers = users.map(user => ({
-      id: user._id, 
+      id: user._id,
       name: user.firstName + ' ' + user.lastName,
       location: user.location,
       techStacks: user.techStacks,

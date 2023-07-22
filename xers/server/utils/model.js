@@ -28,7 +28,7 @@ const userSchema = new Schema({
         sparse: true
     },
     projects: [{
-        type: String,
+        type: mongoose.SchemaTypes.ObjectId,
         ref: "projects",
         sparse: true
     }]

@@ -5,7 +5,7 @@ const express = require('express');
 const port = 3000
 const app = express()
 const Router = require('./routes/index')
-
+app.use(express.json())
 connectDB()
 
 app.use(Router)

@@ -6,7 +6,7 @@ import '../App.css'
 export function TeamCard({ image, name, title, location, techStacks }) {
 
   return (
-        <Card color="white" shadow={false} className="group text-center md:bg-opacity-40 inset-0">
+        <Card color="white" shadow={false} className="group text-center bg-amber-500 md:bg-opacity-40 inset-0">
           <CardBody className="px-8 text-center">
               <Avatar
                 src={image}
