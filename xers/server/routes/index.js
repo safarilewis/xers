@@ -7,7 +7,8 @@ const { register } = require('../controllers/user-controller')
 const cors = require('cors')
 const multer = require('multer')
 const upload = multer({ storage: multer.memoryStorage() });
-const { registerMentor, login } = require('../auth/Auth')
+const { registerMentor, login, getMentors } = require('../auth/Auth')
+const { userAuth } = require('../middleware/auth-middleware.js')
 
 //TODO: Move functions to controllers
 app.use(express.json())
@@ -15,7 +16,8 @@ app.use(cors())
 
 
 router.route("/register").post(registerMentor);
-router.route("/login").post(login)
+router.route("/login").post(login, userAuth)
+router.route("/getUsers").get(getMentors, userAuth)
 app.use("/mentors/auth", router)
 
 
@@ -33,7 +35,7 @@ app.get("/users", async (request, response) => {
       techStacks: user.techStacks,
       image: user.image,
       title: user.title,
-
+      description: user.description
     }));
     response.send(formattedUsers);
   } catch (error) {

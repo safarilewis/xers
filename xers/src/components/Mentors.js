@@ -1,37 +1,41 @@
-import { Typography } from '@material-tailwind/react'
+import { Button, Typography } from '@material-tailwind/react'
 import React from 'react'
-import '../App.css'
+import NavBar from './Navigator'
 
 export default function Mentors() {
     return (
-        <div className="bg-teal-600 h-screen">
-            <div class="loop-wrapper">
-                <div class="mountain"></div>
-                <div class="hill"></div>
-                <div class="tree"></div>
-                <div class="tree"></div>
-                <div class="tree"></div>
-                <div class="rock"></div>
-                <div class="truck"></div>
-                <div class="wheels"></div>
-            </div>
-            <div className='justify-center place-items-center w-screen text-center'>
-                <Typography
-                    className="justify-self-auto text-center p-6"
-                    variant="h1"
-                >
-                    Hey there!
-                </Typography>
-                <div className='grid   justify-items-center'>
-                   
-                    <Typography
-                    className="w-1/3 font-sans text-center justify-self-auto align-self-center text-xl"
-                >
-                    We are working around the clock to ship this feature to you. In the meantime, feel free to check out this <a className="underline text-white" href='https://vadimkravcenko.com/shorts/good-mentor/?utm_source=leadershipintech&utm_medium=newsletter&utm_campaign=being-a-good-mentor'>link</a> about mentor-mentee relationships. Cheers!
-                </Typography>
-                   
+        <div className="text-center backdrop-blur-2xl bg-gradient-to-r from-green-400 to-blue-500 w-screen h-screen">
+            <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
+                <div className="absolute top-0 h-full w-full bg-cover bg-center" />
+                <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
+                <div className="absolute top-0 w-full">
+                    <NavBar />
                 </div>
-                
+                <div className="max-w-8xl container relative mx-auto">
+                    <div className="flex flex-wrap items-center">
+                        <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
+                            <Typography
+                                variant="h1"
+                                color="white"
+                                className="mb-6 font-black"
+                            >
+                                Welcome to the Mentors Hall
+                            </Typography>
+                            <Typography variant="lead" color="white" className="opacity-80">
+                                Join today to find a peer mentor or to become one.
+                            </Typography>
+                            <div className='flex justify-center items-center'>
+                                <a href='/mentors/login'>
+                                    <Button className="m-5">Login</Button>
+                                </a>
+                                <Typography color='white' className="font-bold">or</Typography>
+                                <a href='/mentors/register'>
+                                    <Button className="m-5">register</Button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

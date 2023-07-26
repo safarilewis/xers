@@ -2,21 +2,19 @@ import {
     Card,
     Input,
     Button,
+    Checkbox,
     Typography,
+    Alert
 } from "@material-tailwind/react";
 import { useState } from 'react';
 import axios from 'axios'
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
-export default function Add() {
+export default function Login() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        image: null, // Store the image file
-        title: '',
-        location: '',
-        description: '',
+        email: '',
+        password: '',
     });
     const [error, setError] = useState()
     const [success, setSuccess] = useState()
@@ -36,14 +34,10 @@ export default function Add() {
         console.log(formData);
         // Send form data in Axios POST request
         const formDataToSend = new FormData();
-        formDataToSend.append('firstName', formData.firstName);
-        formDataToSend.append('lastName', formData.lastName);
-        formDataToSend.append('image', formData.image);
-        formDataToSend.append('title', formData.title);
-        formDataToSend.append('location', formData.location);
-        formDataToSend.append('description', formData.description);
+        formDataToSend.append('email', formData.firstName);
+        formDataToSend.append('password', formData.lastName);
         console.log(formDataToSend);
-        axios.post('http://localhost:3000/users/hof', formDataToSend, {
+        axios.post('http://localhost:3000/mentors/auth/login', formDataToSend, {
             headers: {
                 "Content-Type": "multipart/form-data",
                 "Access-Control-Allow-Origin": "*",
@@ -52,10 +46,8 @@ export default function Add() {
             }
         })
             .then((response) => {
-                // Handle the response if needed
                 console.log(response.data);
-                setSuccess(response.data.message)
-                navigate('/hof')
+                navigate('/mentors/home')
             })
             .catch((error) => {
                 // Handle any errors that occurred during the request
@@ -71,22 +63,15 @@ export default function Add() {
                     Xers
                 </Typography>
                 <Typography color="gray" className="mt-1 font-normal">
-                    Add someone to the Hall of Fame
+                    Login to your Xers account
                 </Typography>
                 <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" onSubmit={handleSubmit} encType="multipart/form-data">
                     <div className="mb-4 flex flex-col gap-6">
-                        <Input size="lg" label="First Name" placeholder="e.g Safari" className="text-center" onChange={handleChange} name="firstName" value={formData.firstName} />
-                        <Input size="lg" label="Last Name" placeholder="e.g Lewis" className="text-center" onChange={handleChange} name="lastName" value={formData.lastName}/>
-                        <Input size="lg" label="Location" placeholder="e.g Nairobi" className="text-center" onChange={handleChange} name="location" value={formData.location}/>
-                        <Input size="lg" label="Title" placeholder="e.g Snr. Software Engineer" className="text-center" onChange={handleChange} name="title" value={formData.title} />
-                        <Input size="lg" label="Description"  className="text-center" onChange={handleChange} name="description" value={formData.description} />
-                        <Typography>
-                            Choose your profile picture
-                        </Typography>
-                        <input type="file" onChange={handleChange} accept="image/*" name="image" />
+                        <Input size="lg" label="Email" className="text-center" onChange={handleChange} name="firstName" value={formData.firstName} />
+                        <Input size="lg" label="Password" className="text-center" onChange={handleChange} name="title" value={formData.title} />
                     </div>
                     <Button className="mt-6" fullWidth type="submit">
-                        Add
+                        Login
                     </Button>
                 </form>
             </Card>

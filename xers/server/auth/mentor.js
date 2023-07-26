@@ -22,7 +22,7 @@ const mentorSchema = new Mongoose.Schema({
         required: true
     },
     cohort: {
-        type: Number,
+        type: String,
         required: true,
         unique: false
     },
@@ -30,6 +30,12 @@ const mentorSchema = new Mongoose.Schema({
         type: String,
         default: "Mentor",
     },
+    description: {
+        type: String
+    },
+    title: {
+        type: String
+    }
     
 });
 

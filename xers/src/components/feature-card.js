@@ -3,7 +3,7 @@ import { Avatar, Card, CardBody, Typography } from "@material-tailwind/react";
 import '../App.css'
 
 
-export function TeamCard({ image, name, title, location, techStacks }) {
+export function TeamCard({ image, name, title, location, techStacks,description }) {
 
   return (
         <Card color="white" shadow={false} className="group text-center bg-amber-500 md:bg-opacity-40 inset-0">
@@ -19,6 +19,9 @@ export function TeamCard({ image, name, title, location, techStacks }) {
               </Typography>
               <Typography className="text-white font-bold">
                 {title + ',' + location}
+              </Typography>
+              <Typography className="text-white">
+                {description}
               </Typography>
           </CardBody>
         </Card>

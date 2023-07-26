@@ -21,7 +21,7 @@ const userSchema = new Schema({
         type: Array,
 
     },
-    isMentor: { type: Boolean, default: false },
+    description: { type: String},
     image: {
         data: Buffer,
         type: String,

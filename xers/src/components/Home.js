@@ -3,6 +3,7 @@ import React from 'react'
 import SimpleFooter from './Footer';
 import NavBar from './Navigator';
 import People from '../assets/people.jpg'
+import Team from '../assets/team.jpg'
 
 
 
@@ -11,8 +12,8 @@ export default function Home() {
   return (
     <>
 
-      <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
-        <div className="absolute top-0 h-full w-full bg-cover bg-center" style={{backgroundImage: `url(${People})`}}/>
+      <div className="relative text-center flex h-screen content-center items-center justify-center pt-16 pb-32">
+        <div className="absolute top-0 h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${People})` }} />
         <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
         <div className="absolute top-0 w-full">
           <NavBar />
@@ -34,11 +35,19 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section>
-        <div className="h-screen mx-auto mt-12 max-w-3xl text-center font-bold text-2xl">About Us</div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+      <section className="h-screen">
+        <div className="h-fit mx-auto mt-12 max-w-3xl text-center font-bold text-2xl">About Us</div>
+        <div className="w-full h-fit flex p-10">
+          <Typography className="self-center text-center w-1/2 text-xl ">
+            It may seem challenging to start a career in tech, but with the right guidance it becomes easier for us to learn. At Xers, we are looking to grow a community of peer mentors that learn from each other and 
+            help each other become the best versions of ourselves.
+          </Typography>
+          <img src={Team} alt="People working together" className="w-1/2 h-80 object-contain object-center rounded-full " />
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 self-end">
           <Card className="rounded-2xl shadow-2xl shadow-gray-500/10">
-            <CardBody className="px-8 text-center">
+            <CardBody className="px-8 text-center h-full">
               <IconButton
                 variant="gradient"
                 size="lg"
