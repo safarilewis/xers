@@ -20,10 +20,8 @@ Once in the project directory, you can run:
 ## `cd server` then 
 ## `npm install`
 - This will install the dependencies for the express and mongodb server.
-- While in the server directory run `node index.js` this will start the express server that will be used to sever data from the MongoDB database to the Frontend.
+- While in the server directory run `node index.js` this will start the express server that will be used to serve data from the MongoDB database to the Frontend.
 
-
-[1]: https://www.npmjs.com/package/axios
 
 
 # Author
@@ -46,6 +44,7 @@ Steps to contribute:
 ## Features yet to be implemented:
 - Mentors space
 - Authentication of students
+- A chat feature for the community members
   
 # License
 
