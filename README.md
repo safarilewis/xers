@@ -18,13 +18,6 @@ Once in the project directory, you can run:
 ### `npm run start`
 - This will start the application on a local development server and can be accessed at http://localhost:3000
 
-## `cd server` then 
-## `npm install`
-- This will install the dependencies for the express and mongodb server.
-- While in the server directory run `node index.js` this will start the express server that will be used to serve data from the MongoDB database to the Frontend.
-
-
-
 # Author
 
 The author of this project is Lewis Safari.
