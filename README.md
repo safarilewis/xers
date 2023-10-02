@@ -1,6 +1,7 @@
 # Xers
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
-A Hall of Fame for ALX Students to display their awesome works.
+
+- A Hall of Fame for ALX Students to display their awesome works.
 
 ## Requirements
 You will need to have the following already installed to run the project:
@@ -16,15 +17,6 @@ Once in the project directory, you can run:
 
 ### `npm run start`
 - This will start the application on a local development server and can be accessed at http://localhost:3000
-
-## `cd server` then 
-## `npm install`
-- This will install the dependencies for the express and mongodb server.
-- While in the server directory run `node index.js` this will start the express server that will be used to sever data from the MongoDB database to the Frontend.
-
-
-[1]: https://www.npmjs.com/package/axios
-
 
 # Author
 
@@ -42,10 +34,15 @@ Steps to contribute:
 3. Commit your changes.
 4. Push to the branch.
 5. Create a new Pull Request.
-   
+
+## Features Already Implemented
+- Authentication
+- Hall of Fame
+  
 ## Features yet to be implemented:
 - Mentors space
-- Authentication of students
+- Verification of student status. i.e Whether they have taken part in the program.
+- A chat feature for the community members
   
 # License
 
