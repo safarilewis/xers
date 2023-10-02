@@ -2,6 +2,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 - A Hall of Fame for ALX Students to display their awesome works.
+- View the Live URL [![here](https://xers.vercel.app/)]
 
 ## Requirements
 You will need to have the following already installed to run the project:
