@@ -1,6 +1,7 @@
 # Xers
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
-A Hall of Fame for ALX Students to display their awesome works.
+
+- A Hall of Fame for ALX Students to display their awesome works.
 
 ## Requirements
 You will need to have the following already installed to run the project:
