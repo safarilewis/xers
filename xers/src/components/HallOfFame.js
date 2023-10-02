@@ -7,14 +7,9 @@ import TeamCard from './feature-card';
 //const url = "http://localhost:3000/users"
 
 //Fetch user data 
-
-
-
 export default function HallOfFame() {
   const [user, setUser] = useState([]);
   useEffect(() => {
-
-    console.log('I have started');
     let config = {
       method: 'get',
       maxBodyLength: Infinity,

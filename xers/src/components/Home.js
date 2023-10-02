@@ -6,12 +6,9 @@ import People from '../assets/people.jpg'
 import Team from '../assets/team.jpg'
 
 
-
-
 export default function Home() {
   return (
     <>
-
       <div className="relative text-center flex h-screen content-center items-center justify-center pt-16 pb-32">
         <div className="absolute top-0 h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${People})` }} />
         <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
