@@ -41,10 +41,14 @@ Steps to contribute:
 3. Commit your changes.
 4. Push to the branch.
 5. Create a new Pull Request.
-   
+
+## Features Already Implemented
+- Authentication
+- Hall of Fame
+  
 ## Features yet to be implemented:
 - Mentors space
-- Authentication of students
+- Verification of student status. i.e Whether they have taken part in the program.
 - A chat feature for the community members
   
 # License
