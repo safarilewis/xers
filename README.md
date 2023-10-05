@@ -39,10 +39,11 @@ Steps to contribute:
 - Authentication
 - Hall of Fame
   
-## Features yet to be implemented:
+## Features still in progress:
 - Mentors space
 - Verification of student status. i.e Whether they have taken part in the program.
-- A chat feature for the community members
+- A chat feature for the community members.
+- A matching algorithm to match mentors and mentees based on location & interests.
   
 # License
 
