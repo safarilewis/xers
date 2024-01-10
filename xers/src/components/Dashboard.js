@@ -8,13 +8,14 @@ import { Typography } from '@material-tailwind/react';
 export default function Dashboard() {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:3000/mentors/auth/getUsers", {
+        axios.get("http://localhost:3000/getUsers", {
             headers: {
                 "Content-Type": "application/json"
             }
+
         })
             .then((response) => {
-                setUsers(response.data.user)
+                setUsers(response.data.Users)
             })
     }, [])
     return (
@@ -30,8 +31,8 @@ export default function Dashboard() {
                             <Typography>
                                 Our Members
                             </Typography>
-                            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5 ">
-                                {users.map((user) => {
+                            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1 ">
+                                {users && users.map((user) => {
                                     return (
                                         <MentorsCard key={user.id} name={user.firstName} title={user.title} description={user.description} cohort={user.cohort} />
                                     )

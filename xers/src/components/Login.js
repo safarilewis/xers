@@ -21,7 +21,6 @@ export default function Login() {
     const handleChange = (event) => {
         const { name, value, type, checked, files } = event.target;
         const fieldValue = type === 'checkbox' ? checked : type === 'file' ? files[0] : value;
-
         setFormData((prevData) => ({
             ...prevData,
             [name]: fieldValue,
@@ -34,12 +33,16 @@ export default function Login() {
         console.log(formData);
         // Send form data in Axios POST request
         const formDataToSend = new FormData();
-        formDataToSend.append('email', formData.firstName);
-        formDataToSend.append('password', formData.lastName);
+        formDataToSend.append('email', formData.email);
+        formDataToSend.append('password', formData.password);
+        const data ={
+            email: formData.email,
+            password: formData.password
+        }
         console.log(formDataToSend);
-        axios.post('http://localhost:3000/mentors/auth/login', formDataToSend, {
+        axios.post('http://localhost:3000/login', data, {
             headers: {
-                "Content-Type": "multipart/form-data",
+                "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*",
                 "X-Powered-By": "Express",
                 "Connection": "keep-alive"
@@ -67,8 +70,8 @@ export default function Login() {
                 </Typography>
                 <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" onSubmit={handleSubmit} encType="multipart/form-data">
                     <div className="mb-4 flex flex-col gap-6">
-                        <Input size="lg" label="Email" className="text-center" onChange={handleChange} name="firstName" value={formData.firstName} />
-                        <Input size="lg" label="Password" className="text-center" onChange={handleChange} name="title" value={formData.title} />
+                        <Input size="lg" label="Email" className="text-center" onChange={handleChange} name="email" value={formData.email} />
+                        <Input size="lg" label="Password" className="text-center" onChange={handleChange} name="password" value={formData.password} />
                     </div>
                     <Button className="mt-6" fullWidth type="submit">
                         Login
