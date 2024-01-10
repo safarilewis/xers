@@ -33,7 +33,7 @@ export default function HallOfFame() {
           </div>
           <div className="flex h-full w-full items-center justify-center bg-black/50 ">
             <div className="items-center content-center">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 px-10">
               {user.map((user) => {
                 return (
                   <TeamCard key={user.id} name={user.name} title={user.title} location={user.location} techStacks={user.techStacks} description={user.description} image={user.image} />

@@ -18,7 +18,8 @@ export default function SignUp() {
         cohort: 0,
         password: '',
         description: '',
-        title: ''
+        title: '',
+        role: 'Mentor'
     });
 
     const handleChange = (event) => {
@@ -33,22 +34,11 @@ export default function SignUp() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        console.log(formData);
-        // Send form data in Axios POST request
-        const formDataToSend = JSON.stringify(formData);
-        // formDataToSend.append('firstName', formData.firstName);
-        // formDataToSend.append('lastName', formData.lastName);
-        // formDataToSend.append('email', formData.email);
-        // formDataToSend.append('password', formData.password);
-        // formDataToSend.append('cohort', formData.cohort);
-        // console.log(formDataToSend);
-        axios.post('http://localhost:3000/mentors/auth/register', formDataToSend, {
+        axios.post('http://localhost:3000/register', formData, {
             headers: {
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*",
                 "X-Powered-By": "Express",
-                "Connection": "keep-alive"
             }
         })
             .then((response) => {

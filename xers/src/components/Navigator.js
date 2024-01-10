@@ -35,7 +35,7 @@ export default function NavBar() {
                         </svg>
                     </button>
                 </div>
-                <div className={`w-full  flex-grow lg:flex lg:items-end lg:w-auto ${isOpen ? "block" : "hidden"}`}>
+                <div className={`w-full  flex-grow lg:flex lg:items-end lg:w-auto ${isOpen ? "block" : "hidden"} justify-items-end items-end text-end`}>
                     <div className="text-l lg:flex-grow">
                         <a href="/home" className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4 rounded p-2 hover:text-gray-500 focus:text-gray-500 font-bold">
                             Home
