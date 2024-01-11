@@ -1,7 +1,7 @@
 # Xers
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
-- A Hall of Fame for ALX Students to display their awesome works.
+- A Hall of Fame for ALX Students to display their awesome works, you can test out the live project [here](https://xers.vercel.app).
 
 ## Requirements
 You will need to have the following already installed to run the project:
@@ -39,10 +39,11 @@ Steps to contribute:
 - Authentication
 - Hall of Fame
   
-## Features yet to be implemented:
+## Features still in progress:
 - Mentors space
 - Verification of student status. i.e Whether they have taken part in the program.
-- A chat feature for the community members
+- A chat feature for the community members.
+- A matching algorithm to match mentors and mentees based on location & interests.
   
 # License
 
